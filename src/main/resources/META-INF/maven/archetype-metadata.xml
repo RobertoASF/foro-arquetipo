@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+	xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+	name="foro-microservicio">
+
+	<requiredProperties>
+		<!-- Nombre corto del dominio, por ejemplo: moderacion -->
+		<requiredProperty key="dominio">
+			<validationRegex>^[a-z]+$</validationRegex>
+		</requiredProperty>
+		<!-- Prefijo de la clase principal, por ejemplo: MsModeracion -->
+		<requiredProperty key="nombreClase">
+			<validationRegex>^[A-Z][A-Za-z0-9]*$</validationRegex>
+		</requiredProperty>
+		<requiredProperty key="puerto">
+			<validationRegex>^[0-9]{4}$</validationRegex>
+		</requiredProperty>
+		<requiredProperty key="descripcion">
+			<defaultValue>Microservicio del foro</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="esquema">
+			<defaultValue>foro_${dominio}</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="groupId">
+			<defaultValue>cl.duoc.foro</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="version">
+			<defaultValue>1.0.0</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="package">
+			<defaultValue>cl.duoc.foro.${dominio}</defaultValue>
+		</requiredProperty>
+		<!-- Maven no empaqueta archivos que parten con punto, por eso se nombran con estas propiedades -->
+		<requiredProperty key="gitignore">
+			<defaultValue>.gitignore</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="gitattributes">
+			<defaultValue>.gitattributes</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="dockerignore">
+			<defaultValue>.dockerignore</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+
+	<fileSets>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*.properties</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>db</directory>
+			<includes>
+				<include>**/*.sql</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>Dockerfile</include>
+				<include>README.md</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>__gitignore__</include>
+				<include>__gitattributes__</include>
+				<include>__dockerignore__</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</archetype-descriptor>
