@@ -6,7 +6,7 @@ Arquetipo Maven para crear los microservicios del foro de TCG con la misma estru
 |---|---|
 | groupId | `cl.duoc.foro` |
 | artifactId | `foro-microservicio-archetype` |
-| Versión | `1.0.0` |
+| Versión | `1.0.1` |
 
 ## Qué trae el proyecto generado
 
@@ -62,7 +62,7 @@ Esto deja el arquetipo en el repositorio local de Maven. Durante la instalación
 mvn archetype:generate \
   -DarchetypeGroupId=cl.duoc.foro \
   -DarchetypeArtifactId=foro-microservicio-archetype \
-  -DarchetypeVersion=1.0.0 \
+  -DarchetypeVersion=1.0.1 \
   -DgroupId=cl.duoc.foro \
   -DartifactId=ms-moderacion \
   -Ddominio=moderacion \
@@ -72,8 +72,13 @@ mvn archetype:generate \
   -DinteractiveMode=false
 ```
 
-Con este comando se creó `foro-ms-moderacion`. Después solo falta agregar las entidades, repositorios, servicios y controladores del nuevo dominio.
+Así se creó `foro-ms-moderacion`. Después solo falta agregar las entidades, repositorios, servicios y controladores del nuevo dominio.
 
 ## Versiones
 
 Se usa versionado semántico. Cada versión queda marcada con un tag `vX.Y.Z` en `main`.
+
+| Versión | Cambios |
+|---|---|
+| 1.0.1 | La prueba de seguridad ya no carga los controladores del proyecto generado |
+| 1.0.0 | Primera versión de la plantilla |
