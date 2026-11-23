@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cl.duoc.foro</groupId>
 	<artifactId>foro-microservicio-archetype</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>maven-archetype</packaging>
 	<name>foro-microservicio-archetype</name>
 	<description>Arquetipo para crear los microservicios Spring Boot del foro</description>
