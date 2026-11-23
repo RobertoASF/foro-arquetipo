@@ -1,0 +1,3 @@
+-- Tablas del microservicio ${artifactId}.
+-- Se ejecuta conectado como ${esquema.toUpperCase()}.
+-- Cada microservicio es dueño de su esquema: no se crean claves foráneas hacia otros esquemas.
